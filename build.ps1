@@ -43,14 +43,11 @@ foreach ($path in $msys2Paths) {
     }
 }
 
-if ($msys2Path -eq $null) {
+if ($null -eq $msys2Path) {
     Write-Host "ERRO: Dependências GTK4 não encontradas!" -ForegroundColor Red
     Write-Host "Execute primeiro o script install_gtk4_deps.ps1" -ForegroundColor Yellow
     exit 1
 }
-
-$gtkLibPath = "$msys2Path\mingw64\lib"
-$gtkBinPath = "$msys2Path\mingw64\bin"
 
 # Configurar variáveis de ambiente para o build
 $env:PKG_CONFIG_PATH = "$msys2Path\mingw64\lib\pkgconfig"
@@ -90,7 +87,6 @@ $outputPath = Join-Path $binDir $outputName
 
 # Definir flags de compilação baseado no tipo de build
 $buildFlags = @()
-$linkFlags = @()
 
 switch ($BuildType.ToLower()) {
     "debug" {

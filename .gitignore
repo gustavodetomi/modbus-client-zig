@@ -1,0 +1,22 @@
+# Zig build artifacts
+zig-cache/
+zig-out/
+
+# Build output
+build/
+
+# Windows executables and debug files
+*.exe
+*.obj
+*.pdb
+*.dll
+
+# PowerShell scripts output
+*.ps1~
+
+# Misc
+*.log
+*.tmp
+
+# VS Code settings
+.vscode/

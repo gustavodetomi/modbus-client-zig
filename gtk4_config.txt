@@ -1,0 +1,30 @@
+# Configuração GTK4 para Zig
+# Use estas configurações no seu build.zig
+
+# Caminhos das bibliotecas (ajustado para localização do MSYS2)
+GTK4_LIB_PATH = "C:/tools/msys64/mingw64/lib"
+GTK4_INCLUDE_PATH = "C:/tools/msys64/mingw64/include"
+GTK4_BIN_PATH = "C:/tools/msys64/mingw64/bin"
+
+# Bibliotecas necessárias para linking
+GTK4_LIBS = [
+    "gtk-4",
+    "gobject-2.0",
+    "glib-2.0",
+    "cairo",
+    "pango-1.0",
+    "pangocairo-1.0",
+    "gdk_pixbuf-2.0",
+]
+
+# Flags de compilação (ajustado para localização do MSYS2)
+GTK4_CFLAGS = [
+    "-IC:/tools/msys64/mingw64/include/gtk-4.0",
+    "-IC:/tools/msys64/mingw64/include/glib-2.0",
+    "-IC:/tools/msys64/mingw64/lib/glib-2.0/include",
+    "-IC:/tools/msys64/mingw64/include/cairo",
+    "-IC:/tools/msys64/mingw64/include/pango-1.0",
+    "-IC:/tools/msys64/mingw64/include/gdk-pixbuf-2.0",
+]
+
+# Caminho MSYS2 detectado: C:\tools\msys64
